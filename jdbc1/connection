@@ -1,0 +1,33 @@
+public static void main(String[] args) {
+		final String URL = "jdbc:mysql://localhost:3306/gestion_produits";
+		final String USER = "root";
+		final String PASSWORD = "";
+
+		try {
+			Class.forName("com.mysql.cj.jdbc.Driver");
+			Connection con = DriverManager.getConnection(URL,USER,PASSWORD);
+			String sql ="SELECT * FROM produits";
+			PreparedStatement ps = con.prepareStatement(sql);
+			ResultSet rs = ps.executeQuery();
+			ResultSetMetaData rsmd = rs.getMetaData();
+			for(int i=1;i<=rsmd.getColumnCount();i++) {
+				System.out.print(rsmd.getColumnName(i)+"\t");
+			}
+			System.out.println();
+			while(rs.next()) {
+				for(int i=1;i<=rsmd.getColumnCount();i++) {
+					System.out.print(rs.getString(i)+"\t");
+				
+			}
+			System.out.println();
+			
+			}
+					
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		
+
+	}

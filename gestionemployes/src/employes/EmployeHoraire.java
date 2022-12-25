@@ -1,10 +1,11 @@
 package employes;
 
-import java.util.Date;
+import java.time.LocalDate;
+
 
 public class EmployeHoraire extends Employe{
 
-		public EmployeHoraire(String name, String firstname, Date birthday) {
+		public EmployeHoraire(String name, String firstname, LocalDate birthday) {
 		super(name, firstname, birthday);
 		
 		

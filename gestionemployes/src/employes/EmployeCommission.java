@@ -1,12 +1,12 @@
 package employes;
 
-import java.util.Date;
+import java.time.LocalDate;
 
 public class EmployeCommission extends Employe{
 
 	private double salaire;
 
-	public EmployeCommission(String name, String firstname, Date birthday,double salaire) {
+	public EmployeCommission(String name, String firstname, LocalDate birthday,double salaire) {
 		super(name, firstname, birthday);
 		this.salaire = salaire;
 		

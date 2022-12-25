@@ -1,14 +1,14 @@
 package employes;
 
-import java.util.Date;
+import java.time.LocalDate;
 
 public class Employe {
 	private String name;
 	private String firstname;
-	private Date birthday;
+	private LocalDate birthday;
 
 	
-	public Employe(String name, String firstname, Date birthday) {
+	public Employe(String name, String firstname, LocalDate birthday) {
 		super();
 		this.name = name;
 		this.firstname = firstname;
@@ -26,10 +26,10 @@ public class Employe {
 	public void setFirstname(String firstname) {
 		this.firstname = firstname;
 	}
-	public Date getBirthday() {
+	public LocalDate getBirthday() {
 		return birthday;
 	}
-	public void setBirthday(Date birthday) {
+	public void setBirthday(LocalDate birthday) {
 		this.birthday = birthday;
 	}
 
