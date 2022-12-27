@@ -48,7 +48,7 @@ public class ProduitDaoImpl implements IProduitDao{
 			String sql = "SELECT * FROM produits WHERE DESIGNATION LIKE ?";
 			PreparedStatement ps = connection.prepareStatement(sql);
 			ps.setString(1, "%"+mc+"%");
-			System.out.println("Mot cle saisi : "+mc);
+			//System.out.println("Mot cle saisi : "+mc);
 			ResultSet rs = ps.executeQuery();
 			while(rs.next()) {
 				Produit prod = new Produit();

@@ -15,7 +15,8 @@
 				<form action="UpdateProduit.php" method="post">
 				<div class="form-group">
 						<label class="form-control">ID</label>
-						<input  required="required" class="form-control" type="text" name="id" value="${produit.id}" }/>
+						<input  required="required" class="form-control" type="hidden" name="id" value="${produit.id}" }/>
+						<label>${produit.id}</label>
 						<span></span>
 					</div>
 					<div class="form-group">

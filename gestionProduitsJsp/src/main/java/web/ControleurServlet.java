@@ -4,7 +4,6 @@ import java.io.IOException;
 import java.util.List;
 
 import javax.servlet.ServletException;
-import javax.servlet.annotation.WebFilter;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -16,9 +15,10 @@ import dao.IProduitDao;
 import dao.ProduitDaoImpl;
 import metier.entities.Produit;
 
-//@WebServlet(name="cs", urlPatterns = {"*.php"})
+@WebServlet(name="cs", urlPatterns = {"*.php"})
 public class ControleurServlet extends HttpServlet {
 	
+	private static final long serialVersionUID = 1L;
 	private IProduitDao metier;
 	
 	@Override
@@ -38,7 +38,7 @@ public class ControleurServlet extends HttpServlet {
 			ProduitModel model = new ProduitModel();
 			model.setMotCle(motcle);
 			List<Produit> produits = metier.produitsParMC(motcle);
-			System.out.println("Apres");
+			//System.out.println("Apres");
 			model.setProduits(produits);
 			request.setAttribute("model", model);
 			request.getRequestDispatcher("produits.jsp").forward(request, response);
@@ -60,8 +60,8 @@ public class ControleurServlet extends HttpServlet {
 		else if(path.equals("/supprime.php")) {
 			Long id = Long.parseLong(request.getParameter("id"));
 			metier.deleteProduit(id);
-			request.getRequestDispatcher("produits.jsp").forward(request, response);
-			//response.sendRedirect("chercher.php?motCle=");
+			//request.getRequestDispatcher("produits.jsp").forward(request, response);
+			response.sendRedirect("chercher.php?motCle=");
 		}
 		
 		else if(path.equals("/edit.php")) {
