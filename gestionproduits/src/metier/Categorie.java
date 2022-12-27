@@ -1,25 +1,27 @@
-package produitModel;
+package metier;
 
+import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.List;
 
-public class Categorie {
+public class Categorie implements Serializable {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private int idcategorie;
 	private String namecategorie;
-	private List<Produit> products;
+	private List<Produit> products = new ArrayList<>();
 	
 	
-	public Categorie(int idcategorie, String namecategorie) {
-		this.idcategorie = idcategorie;
-		this.namecategorie = namecategorie;
-	}
 	
-	
-	public Categorie(int idcategorie, String namecategorie, List<Produit> products) {
-		this.idcategorie = idcategorie;
-		this.namecategorie = namecategorie;
-		this.products = products;
+	public Categorie() {
+		
 	}
 
+	public Categorie(String namecategorie) {
+		this.namecategorie = namecategorie;
+	}
 
 	public int getIdcategorie() {
 		return idcategorie;
