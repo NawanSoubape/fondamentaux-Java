@@ -16,9 +16,9 @@ public class TestDao {
 		
 		//Test de la methode de recherche des produits
 		System.out.println("Recherche des produits");
-		List<Produit> prods = dao.produitsParMC("%"+"hp"+"%");
+		List<Produit> prods = dao.produitsParMC("hp");
 		for(Produit p : prods) {
-			System.out.println(p.toString());
+			System.out.println(p.getDesignation());
 		}
 	}
 

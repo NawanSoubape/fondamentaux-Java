@@ -9,6 +9,7 @@ public class ProduitModel {
 
 	private String motCle;
 	private List<Produit> produits =  new ArrayList<>();
+	
 	public String getMotCle() {
 		return motCle;
 	}
