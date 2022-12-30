@@ -68,6 +68,12 @@ public abstract class Compte implements Serializable{
 	public void setOperations(Collection<Operation> operations) {
 		this.operations = operations;
 	}
+
+	@Override
+	public String toString() {
+		return "Compte [codeCompte=" + codeCompte + ", dateCreation=" + dateCreation + ", solde=" + solde + ", client="
+				+ client + ", operations=" + operations + "]";
+	}
 	
 	
 
