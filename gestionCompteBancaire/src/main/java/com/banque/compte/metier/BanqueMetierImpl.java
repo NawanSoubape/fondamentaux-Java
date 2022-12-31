@@ -29,7 +29,7 @@ public class BanqueMetierImpl implements IBanqueMetier{
 	public Compte consulterCompte(String codeCompte) {
 		Compte cp = compteRepository.findById(codeCompte).get();
 		if(cp==null) throw new RuntimeException("Compte introuvable");
-		System.out.println(cp);
+		//System.out.println(cp);
 		return cp;
 		
 		
@@ -42,7 +42,6 @@ public class BanqueMetierImpl implements IBanqueMetier{
 		operationRepository.save(v);
 		cp.setSolde(cp.getSolde()+montant);
 		compteRepository.save(cp);
-		
 		
 	}
 
